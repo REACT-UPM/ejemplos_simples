@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import ListaProductos from './ListaProductos';
+import CargaDatos from './CargaDatos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ListaProductos />
+    <CargaDatos />
   </React.StrictMode>
 );
 
