@@ -24,8 +24,8 @@ export default function CargaDatos(props){
 
   return <div>
     <b>Datos cargados de la URL: {url}</b>
-    <div>
+    <pre>
       {JSON.stringify(data, null, 2)}
-    </div>
+    </pre>
     </div>
 }
