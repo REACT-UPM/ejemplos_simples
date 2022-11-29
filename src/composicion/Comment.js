@@ -1,9 +1,11 @@
+import UserInfo from './UserInfo';
+
 export default function Comment(props) {
 
   function formatDate(date) {
     return date.toLocaleDateString();
   }
-  
+
     return (
     <div className="Comment">
       <UserInfo user={props.author} />
