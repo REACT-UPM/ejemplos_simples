@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Contador3 from './Contador3';
+import App from './composicion/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( <Contador3 />);
+root.render( <App />);
 
 
 
