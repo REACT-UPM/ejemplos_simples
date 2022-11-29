@@ -30,5 +30,7 @@ Comment.propTypes = {
 
 
 Comment.defaultProps = {
-  author: {name: "Anónimo", avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"}
+  author: {
+    name: "Anónimo", 
+    avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"}
 };
