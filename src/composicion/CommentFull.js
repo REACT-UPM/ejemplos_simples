@@ -4,8 +4,6 @@ export default function Comment(props) {
     return date.toLocaleDateString();
   }
 
-
-
   return (
     <div className="Comment">
       <div className="UserInfo">
@@ -17,7 +15,7 @@ export default function Comment(props) {
         </div>
       </div>
       <div className="Comment-text">
-        Hola que tal {props.text}
+        {props.text}
       </div>
       <div className="Comment-date">
         {formatDate(props.date)}
