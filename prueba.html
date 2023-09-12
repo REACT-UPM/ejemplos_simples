@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba</title>
+    <script type="text/javascript">
+        const mydata = {
+            "name": "Pepe",
+            "age": 23,
+            "address": {
+                "street": "Calle Falsa",
+                "number": 123,
+                "city": "Springfield"
+            }
+        };
+
+       function getName(param1, param2) {
+         console.log("entra en la función con parámetros: " + param1 + ", " + param2);
+         return mydata + param2;
+       }
+
+       setTimeout(()=>getName(7,'segundo'), 5000);
+    </script>
+</head>
+<body>
+    <h1>Prueba</h1>
+    <button onclick="getName(2,'segundo')">Llama a mi función</button>
+    </body>
+</html>
