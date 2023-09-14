@@ -4,6 +4,9 @@ export default function Comment(props) {
     return date.toLocaleDateString();
   }
 
+  //en este ejemplo no hay UserInfo y está todo en el componente Comment
+  //en el otro ejemplo (fichero Comment.js) se ha sacado una parte a otro componente UserInfo 
+  //quedando asi más refactorizado el código, mantenible, escalable y reutilizable
   return (
     <div className="Comment">
       <div className="UserInfo">

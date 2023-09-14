@@ -1,4 +1,5 @@
 import Comment from "./CommentFull";
+//import Comment from "./Comment";
 
 //Los meses en new Date empiezan en 0, por eso el 11 es diciembre
 const comment = {
