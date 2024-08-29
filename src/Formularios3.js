@@ -3,8 +3,9 @@ import { useState } from "react";
 export default function Formularios3() {
   const [valor, setValor] = useState("");
 
-  function onSubmit() {
+  function onSubmit(event) {
     console.log("value: " + valor);
+    event.preventDefault();
   }
 
   function handleChange(event){
@@ -14,7 +15,7 @@ export default function Formularios3() {
   return (<>
     {valor ? <div>Valor elegido: {valor}</div>:<div>No se ha elegido ningún valor</div>}
     <br/><br/>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={(e)=>onSubmit(e)}>
       <label>
           Elige el valor:
           <select value={valor} onChange={handleChange}>

@@ -12,8 +12,8 @@ export default function ListaProductos(props) {
       { productList.map((product, index) => {
           const { name, price } = product;
           return <Producto key={index}
-              productName={name}
-              costInEuros={price} />
+              productName={product.name}
+              costInEuros={product.price} />
         }) 
       }
   </div>)

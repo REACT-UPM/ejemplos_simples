@@ -7,7 +7,7 @@ export default function Contador() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
+      <button onClick={() => setCount(count + 2)}>
         Click me
       </button>
     </div>

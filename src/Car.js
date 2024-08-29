@@ -12,6 +12,7 @@ export default function Car() {
       <p>
         It is a {color} {model} from {year}.
       </p>
+      <button onClick={()=>setColor("blue")}>Cambia a azul</button>
     </>
   )
 }

@@ -7,6 +7,7 @@ export default function Contador4() {
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
+    console.log("entra")
   });
 
   return (

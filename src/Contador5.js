@@ -9,7 +9,13 @@ export default function Contador5() {
       setTick(tick => tick+1);
     },1000);
     return () => clearInterval(interval);
-  },[]);
+  }, []);
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+    console.log("entra")
+  }, [count]);
 
   return (<div>
       <div>¿Eres más rápido que un setInterval?</div>
