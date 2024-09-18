@@ -21,8 +21,8 @@ export default function UseRefUseStateVar() {
     }
 
     const incrementRef = () => {
-      console.log('refCount:', refCount.current);
       refCount.current += 1;      
+      console.log('refCount:', refCount.current);
     }
   
     

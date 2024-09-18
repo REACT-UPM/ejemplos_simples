@@ -1,21 +1,18 @@
-import Comment from "./CommentFull";
+import Comment from "./CommentWithPropTypes";
 //import Comment from "./Comment";
 
-//Los meses en new Date empiezan en 0, por eso el 11 es diciembre
+//Los meses en new Date empiezan en 0, por eso el 11 es abril
 const comment = {
   date: new Date(2025, 3, 11),
-  text: 'Me encanta aprender React!',
+  text: 77,
   author: {
-    name: 'Enrique Barra',
-    avatarUrl: 'http://placekitten.com/g/64/64'
+    name: "Hola",
+    avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"
   }
 };
 
 function App() {
-  return (<Comment
-        date={comment.date}
-        text={comment.text}
-        author={comment.author} />);
+  return (<Comment date={comment.date} text={comment.text} author={comment.author} />);
 }
 
 export default App;

@@ -3,6 +3,7 @@ export default function Comment(props) {
   function formatDate(date) {
     return date.toLocaleDateString();
   }
+  
 
   //en este ejemplo no hay UserInfo y está todo en el componente Comment
   //en el otro ejemplo (fichero Comment.js) se ha sacado una parte a otro componente UserInfo 
@@ -12,7 +13,8 @@ export default function Comment(props) {
       <div className="UserInfo">
         <img className="Avatar"
              src={props.author.avatarUrl}
-             alt={props.author.name} />
+             alt={props.author.name} 
+             width="100px"/>
         <div className="UserInfo-name">
           {props.author.name}
         </div>

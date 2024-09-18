@@ -5,7 +5,8 @@ export default function Car2() {
     brand: "Ford",
     model: "Mustang",
     year: "1964",
-    color: "red"
+    color: "red",
+    property: "Enrique"
   });
 
   return (
@@ -14,6 +15,7 @@ export default function Car2() {
       <p>
         It is a {car.color} {car.model} from {car.year}.
       </p>
+      <button onClick={() => setCar({ year: "2021" })}>CAMBIAR AÑO</button>
     </>
   )
 }

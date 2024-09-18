@@ -20,6 +20,7 @@ export default function ExampleUseMemo() {
   const filteredItems = items.filter(item => item.toLowerCase().includes(filter.toLowerCase()));
 
   // Memoize the expensive calculation based on the filtered items
+  //it will only recalculate the expensive calculation when the filteredItems length changes
   const expensiveCalculation = useMemo(() => {
     return calculateExpensiveSum(filteredItems);
   }, [filteredItems.length]);

@@ -5,6 +5,7 @@ export default function Contador5() {
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
+    console.log("Creamos intervalo!!!")
     const interval = setInterval(()=>{
       setTick(tick => tick+1);
     },1000);
@@ -14,7 +15,7 @@ export default function Contador5() {
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
-    console.log("entra")
+    console.log("entra y count")
   }, [count]);
 
   return (<div>

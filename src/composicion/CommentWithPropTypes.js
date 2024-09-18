@@ -30,6 +30,7 @@ Comment.propTypes = {
 
 
 Comment.defaultProps = {
+  text: "Texto no disponible",
   author: {
     name: "Anónimo", 
     avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"}
