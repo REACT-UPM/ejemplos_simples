@@ -15,7 +15,7 @@ export default function User() {
 
   return (
     <>
-      <h1>My página de usuario</h1>
+      <h1>Mi página de usuario</h1>
       <UserData name={name} age={age} color={color} setEdad={cambiaEdad} setColor={setColor} />
     </>
   )

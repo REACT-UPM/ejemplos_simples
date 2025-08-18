@@ -1,0 +1,104 @@
+/* Estilos para comentarios estilo foro */
+.Comment {
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Comment-header {
+  margin-bottom: 12px;
+}
+
+.User-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+}
+
+.User-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #4a90e2;
+}
+
+.User-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.Comment-content {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 12px;
+}
+
+.Comment-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.Comment-date {
+  font-size: 12px;
+  color: #666;
+  text-align: right;
+  font-style: italic;
+}
+
+/* Para múltiples comentarios */
+.Comments-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Comments-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+/* Estilos para el header de la aplicación */
+.App-header {
+  background-color: #f0f8ff;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-title {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 28px;
+}
+
+.App-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.App-user-info span {
+  font-weight: normal;
+}
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Contador() {
   // Declare a new state variable, which we'll call "count"
