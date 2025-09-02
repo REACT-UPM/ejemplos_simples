@@ -1,0 +1,82 @@
+/* Estilos portados de fetchgroq.html */
+.fetchia-root {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.fetchia-root .container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.fetchia-root h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.fetchia-root .form-group {
+  margin-bottom: 20px;
+}
+
+.fetchia-root label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.fetchia-root select,
+.fetchia-root textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.fetchia-root textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.fetchia-root button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.fetchia-root button:hover {
+  background-color: #2980b9;
+}
+
+#recommendation {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 4px solid #3498db;
+  background-color: #f8f9fa;
+  display: none;
+}
+
+#recommendation.visible {
+  display: block;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+}
