@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="counter">0</p>
+    <button onclick="increment()">Incrementar</button>
+
+    <script>
+      //MODO TRADICIONAL (SIN REACT)
+      let count = 0;
+      function increment() {
+        count++;
+        document.getElementById("counter").innerText = count;
+      }
+    </script>
+  </body>
+</html>

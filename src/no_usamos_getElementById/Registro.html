@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Formulario de registro</h2>
+    <input id="username" type="text" placeholder="Nombre de usuario" />
+    <span id="username-error" style="color: red"></span>
+    <br /><br />
+    <input id="email" type="email" placeholder="Email" />
+    <span id="email-error" style="color: red"></span>
+    <br /><br />
+    <button onclick="validate()">Enviar</button>
+
+    <script>
+    //MODO TRADICIONAL (SIN REACT)
+      function validate() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+
+        if (username.length < 3) {
+          document.getElementById("username-error").innerText =
+            "El nombre es demasiado corto";
+        } else {
+          document.getElementById("username-error").innerText = "";
+        }
+
+        if (!email.includes("@")) {
+          document.getElementById("email-error").innerText =
+            "El email no es válido";
+        } else {
+          document.getElementById("email-error").innerText = "";
+        }
+      }
+    </script>
+  </body>
+</html>
