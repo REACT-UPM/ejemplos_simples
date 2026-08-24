@@ -4,7 +4,7 @@ export default function CargaDatos(props){
   const url = 'https://dummyjson.com/users/1';
   const [data, setData] = useState(null);
 
-  useEffect(async () => {
+  useEffect(() => {
     async function fetchData() {
       try {
 				const response = await fetch(url);
@@ -20,7 +20,7 @@ export default function CargaDatos(props){
 			}    
     }
 
-    await fetchData();
+    fetchData();
   }, []);
 
   return <div>
