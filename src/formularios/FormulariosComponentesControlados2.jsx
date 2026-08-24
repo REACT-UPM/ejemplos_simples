@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //formularios con validación de input de usuario
-export default function Formularios2() {
+export default function FormulariosComponentesControlados2() {
   const [name, setName] = useState("");
   const [error, setError] = useState(null);
   function onSubmit() {
@@ -16,7 +16,10 @@ export default function Formularios2() {
   }
   return (<>
     {error && <div className="Error">{error}</div>}
-    <form onSubmit={onSubmit}>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      onSubmit();
+    }}>
       <input type="text" name="name" placeholder="Tu nombre" 
         value={name} onChange={(e) => checkName(e.target.value)} required />      
       <input type="submit" value="Submit" />

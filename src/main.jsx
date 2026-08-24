@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import FetchIA from './FetchIA'
+import UseRefUseStateVar from './UseRef/UseRefAsProp.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FetchIA />
+    <UseRefUseStateVar />
   </StrictMode>,
 )
