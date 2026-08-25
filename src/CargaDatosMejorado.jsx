@@ -85,5 +85,3 @@ export default function CargaDatosMejorado({ url }) {
 
   return <pre>{JSON.stringify(data, null, 2)}</pre>;
 }
-ingify(data, null, 2)}</pre>;
-}
