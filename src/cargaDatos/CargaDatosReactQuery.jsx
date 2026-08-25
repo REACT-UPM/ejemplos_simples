@@ -44,6 +44,14 @@ export default function CargaDatosReactQuery() {
       <p>Con react-query no hace falta escribir la caché a mano.</p>
       <Suspense fallback={<p>Cargando...</p>}>
         <Usuario id={1} />
+
+        Otro usuario:
+        <Usuario id={2} />
+        <Usuario id={3} />
+
+        Repetimos el usuario 1: no hace falta volver a pedirlo, react-query
+        lo tiene en caché.
+        <Usuario id={1} />
       </Suspense>
     </div>
   );
