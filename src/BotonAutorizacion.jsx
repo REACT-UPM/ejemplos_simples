@@ -67,3 +67,20 @@ export default function BotonAutorizacion() {
     </div>
   );
 }
+
+// En el servidor (ej. Express.js)
+app.post('/api/v1/borrar-usuarios', (req, res) => {
+  
+  // ✅ LA VERDADERA SEGURIDAD ESTÁ AQUÍ
+  // Verificamos quién es realmente a través de una cookie o JWT seguro, 
+  // no nos fiamos del JSON que manda el cliente.
+  const usuarioReal = verificarToken(req.headers.authorization);
+
+  if (!usuarioReal.esAdmin) {
+    return res.status(403).json({ error: "Prohibido: No tienes permisos" });
+  }
+
+  // Si llegamos aquí, podemos ejecutar la acción destructiva
+  baseDeDatos.borrarTodo();
+});
+
