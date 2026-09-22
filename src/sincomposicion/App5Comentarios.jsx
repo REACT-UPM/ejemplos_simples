@@ -1,5 +1,4 @@
 import './../App.css';
-import Comment from "./Comment";
 import './Comment.css';
 
 //Los meses en new Date empiezan en 0, por eso el 11 es abril
@@ -56,6 +55,15 @@ const comments = [
   }
 ];
 
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+//AQUI NO HAY COMPOSICION DE COMPONENTES: todo está escrito dentro de App.
+//Fíjate en que el bloque del usuario conectado y el bloque de la cabecera de
+//cada comentario son EL MISMO HTML repetido dos veces (código duplicado).
+//En la carpeta "composicion" ese HTML repetido es el componente UserInfo,
+//que a su vez usa Avatar, y el comentario entero es el componente Comment.
 function App() {
   return (
     <div className="Comments-container">
@@ -64,9 +72,9 @@ function App() {
         <div className="App-user-info">
           <span>Conectado como: </span>
           <div className="User-info">
-            <img 
-              className="User-avatar" 
-              src={currentUser.avatarUrl} 
+            <img
+              className="User-avatar"
+              src={currentUser.avatarUrl}
               alt={`Avatar de ${currentUser.name}`}
             />
             <div className="User-author">
@@ -75,15 +83,34 @@ function App() {
           </div>
         </div>
       </header>
-      
+
       <h2 className="Comments-title">Comentarios del Foro</h2>
       {comments.map(comment => (
-        <Comment 
-          key={comment.id}
-          date={comment.date} 
-          text={comment.text} 
-          author={comment.author} 
-        />
+        <div className="Comment" key={comment.id}>
+          <div className="Comment-header">
+            <div className="User-info">
+              <img
+                className="User-avatar"
+                src={comment.author.avatarUrl}
+                alt={`Avatar de ${comment.author.name}`}
+              />
+              <div className="User-author">
+                {comment.author.name}
+              </div>
+            </div>
+          </div>
+          <div className="Comment-content">
+            <div
+              className="Comment-text"
+              title={comment.text.length > 200 ? comment.text : undefined}
+            >
+              {comment.text.length > 200 ? comment.text.substring(0, 200) + '...' : comment.text}
+            </div>
+            <div className="Comment-date">
+              {formatDate(comment.date)}
+            </div>
+          </div>
+        </div>
       ))}
     </div>
   );
