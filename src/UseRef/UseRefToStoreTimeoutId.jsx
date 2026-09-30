@@ -6,9 +6,11 @@ export default function UseRefToStoreTimeoutId() {
     const intervalRef = useRef(null);
 
     // Regular variable to store the interval ID - WARNING JUST FOR TESTING - IT DOES NOT WORK
+    // WARNING2: A let variable declared outside the component, at module level, would indeed survive between renders. However, it would be shared by all instances of the component, so if you set up two counters, they would overwrite each other’s IDs. `useRef` gives each instance its own value.
+  
     //console.log("Ponemos el valor de intervalId en null");
     //let intervalId = null;
-  
+    
     const startInterval = () => {
       // Clear any existing interval before starting a new one
       if (intervalRef.current) {

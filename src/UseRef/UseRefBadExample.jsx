@@ -6,14 +6,14 @@ export default function UseRefBadExample() {
   const inputRef = useRef(null);
 
   const changeBackgroundColor = () => {
-    // Directly modifying the DOM element's style using ref
+    // Directly modifying the DOM element's style using ref, similar to how you would do it in vanilla JS
     if (divRef.current) {
       divRef.current.style.backgroundColor = 'red';
     }
   };
 
   const updateInputValue = () => {
-    // Directly setting the input value using ref
+    // Directly setting the input value using ref, similar to how you would do it in vanilla JS
     if (inputRef.current) {
       inputRef.current.value = 'Directly Modified!';
     }
