@@ -1,5 +1,5 @@
 export default function SaludoCondicional(props) {
-  const usuarioLogueado = true; // obtenido de las cookies o de una base de datos
+  const usuarioLogueado = false; // obtenido de las cookies o de una base de datos
   const nombre = "Enrique Barra";
 
   if(usuarioLogueado) {

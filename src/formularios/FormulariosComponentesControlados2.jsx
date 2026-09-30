@@ -9,11 +9,14 @@ export default function FormulariosComponentesControlados2() {
   }
   function checkName(content) {
     if(content.startsWith('p') || content.startsWith('a')) {
-      setName(content);      
+      setName(content);
+      setError(null);      
     } else {
       setError("Nombre tiene que empezar por 'p' o por 'a'");
     }
   }
+
+
   return (<>
     {error && <div className="Error">{error}</div>}
     <form onSubmit={(e) => {

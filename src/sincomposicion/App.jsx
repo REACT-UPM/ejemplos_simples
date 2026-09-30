@@ -5,9 +5,9 @@ import './Comment.css';
 const comment = {
     id: 1,
     date: new Date(2025, 3, 11),
-    text: "Os recomiendo el libro 'Aprende React 19 desde cero', es muy bueno y fácil de entender.",
+    text: "Yo no Os recomiendo el libro 'Aprende React 19 desde cero', es muy bueno y fácil de entender.",
     author: {
-      name: "Enrique",
+      name: "Pepe",
       avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"
     }
   };

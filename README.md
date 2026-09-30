@@ -4,7 +4,7 @@ Para poder probar los ejemplos tenemos que en primer lugar instalar el software 
 
 ### `yarn`
 
-Una vez hecho esto ya tendremos React instalado junto con el resto de librerías que componen el proyecto. Ahora el componente que queramos visualizar lo tenemos que importar en el fichero src/index.js. Asi que editamos dicho fichero para en el import que está arriba del todo importar el componente que queramos ver. Y una vez hecho esto arrancamos el dev server con:
+Una vez hecho esto ya tendremos React instalado junto con el resto de librerías que componen el proyecto. Ahora el componente que queramos visualizar lo tenemos que importar en el fichero src/main.jsx. Asi que editamos dicho fichero para en el import que está arriba del todo importar el componente que queramos ver. Y una vez hecho esto arrancamos el dev server con:
 
 ### `yarn run dev`
 
