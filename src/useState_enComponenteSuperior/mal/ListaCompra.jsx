@@ -1,8 +1,9 @@
-import { useState } from "react";
+import TextInputRoto from "./TextInputRoto.jsx";
+import ShoppingListRota from "./ShoppingListRota.jsx";
 
 // 🔴 ROTO a propósito.
 //
-// Mismo árbol de componentes que en App.jsx:
+// Mismo árbol de componentes que en ListaCompra.jsx:
 //   AppRoto
 //    ├── TextInputRoto
 //    ├── ShoppingListRota (Lista de la compra)
@@ -21,73 +22,6 @@ import { useState } from "react";
 // puede hacer es borrar el producto de sí misma -- así que pulsar ✓
 // hace que el producto desaparezca... y nunca aparece en la otra
 // lista.
-function TextInputRoto() {
-  const [texto, setTexto] = useState("");
-  const [productos, setProductos] = useState([]); // 🔴 su propia copia de la lista
-
-  function añadir() {
-    if (!texto.trim()) return;
-    setProductos((prev) => [...prev, { id: crypto.randomUUID(), nombre: texto }]);
-    setTexto("");
-  }
-
-  return (
-    <div className="shopapp-form">
-      <input
-        className="shopapp-input"
-        value={texto}
-        onChange={(e) => setTexto(e.target.value)}
-        placeholder="Producto a comprar"
-      />
-      <button className="shopapp-add" onClick={añadir}>
-        Añadir
-      </button>
-      <p>
-        TextInput lleva guardados {productos.length} producto(s) -- pero
-        ninguna lista de abajo se entera.
-      </p>
-    </div>
-  );
-}
-
-function ShoppingListRota({ titulo, productosIniciales }) {
-  // 🔴 Estado propio y aislado: se inicializa con `productosIniciales`
-  // (solo la primera vez que se monta) y a partir de ahí vive solo
-  // aquí, sin comunicarse con sus hermanos.
-  const [productos, setProductos] = useState(productosIniciales);
-
-  function quitar(id) {
-    setProductos((prev) => prev.filter((p) => p.id !== id));
-  }
-
-  return (
-    <section>
-      <h2 className="shopapp-section-title">{titulo}</h2>
-      <ul className="shopapp-list">
-        {productos.map((p) => (
-          <ItemRoto key={p.id} producto={p} onCheck={quitar} onBorrar={quitar} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function ItemRoto({ producto, onCheck, onBorrar }) {
-  return (
-    <li className="shopapp-item">
-      <span>{producto.nombre}</span>
-      <span>
-        <button className="shopapp-check" onClick={() => onCheck(producto.id)}>
-          ✓
-        </button>
-        <button className="shopapp-delete" onClick={() => onBorrar(producto.id)}>
-          ✕
-        </button>
-      </span>
-    </li>
-  );
-}
-
 export default function AppRoto() {
   return (
     <div className="shopapp-container">

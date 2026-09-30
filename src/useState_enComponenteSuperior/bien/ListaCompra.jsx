@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TextInput from "./TextInput.jsx";
+import ShoppingList from "./ShoppingList.jsx";
 
 // ✅ Arreglado: "lifting state up".
 //
@@ -14,7 +16,7 @@ import { useState } from "react";
 // de App. Marcar un producto como comprado significa MOVERLO de una
 // lista a la otra -- algo que solo es posible porque las dos leen del
 // mismo estado, guardado en el ANCESTRO COMÚN (App). Si cada lista
-// tuviera su propio useState (ver AppRoto.jsx), mover un producto de
+// tuviera su propio useState (ver ListaCompraRota.jsx), mover un producto de
 // una a otra sería imposible: las props solo bajan de padres a hijos,
 // nunca de hermano a hermano.
 export default function App() {
@@ -72,66 +74,6 @@ export default function App() {
         onBorrar={borrarComprado}
       />
     </div>
-  );
-}
-
-function TextInput({ onAñadir }) {
-  // 👈 Este estado NO sube: solo le importa a él (es el texto que se
-  // está escribiendo ahora mismo, antes de pulsar "Añadir"). Nadie más
-  // en la app necesita saber lo que hay a medio escribir en este input.
-  const [texto, setTexto] = useState("");
-
-  function manejarAñadir() {
-    if (!texto.trim()) return;
-    onAñadir(texto);
-    setTexto("");
-  }
-
-  return (
-    <div className="shopapp-form">
-      <input
-        className="shopapp-input"
-        value={texto}
-        onChange={(e) => setTexto(e.target.value)}
-        placeholder="Producto a comprar"
-      />
-      <button className="shopapp-add" onClick={manejarAñadir}>
-        Añadir
-      </button>
-    </div>
-  );
-}
-
-// 👈 Sin estado propio: recibe `productos` ya calculado y solo pinta.
-// Cuando el usuario pulsa ✓ o ✕, no cambia nada ella misma -- avisa
-// hacia arriba llamando a onCheck(id) / onBorrar(id), y es App quien
-// decide qué hacer con ese evento (mover el producto o borrarlo).
-function ShoppingList({ titulo, productos, onCheck, onBorrar }) {
-  return (
-    <section>
-      <h2 className="shopapp-section-title">{titulo}</h2>
-      <ul className="shopapp-list">
-        {productos.map((p) => (
-          <Item key={p.id} producto={p} onCheck={onCheck} onBorrar={onBorrar} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function Item({ producto, onCheck, onBorrar }) {
-  return (
-    <li className="shopapp-item">
-      <span>{producto.nombre}</span>
-      <span>
-        <button className="shopapp-check" onClick={() => onCheck(producto.id)}>
-          ✓
-        </button>
-        <button className="shopapp-delete" onClick={() => onBorrar(producto.id)}>
-          ✕
-        </button>
-      </span>
-    </li>
   );
 }
 
