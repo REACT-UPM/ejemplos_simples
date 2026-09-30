@@ -30,29 +30,7 @@ export default function App() {
   );
 }
 
-function AñadirProducto({ onAñadir }) {
-  // 👈 Este estado NO sube: solo le importa a él (es el texto que se
-  // está escribiendo ahora mismo, antes de pulsar "Añadir"). Nadie más
-  // en la app necesita saber lo que hay a medio escribir en este input.
-  const [texto, setTexto] = useState("");
 
-  function manejarAñadir() {
-    if (!texto.trim()) return;
-    onAñadir(texto);
-    setTexto("");
-  }
-
-  return (
-    <div>
-      <input
-        value={texto}
-        onChange={(e) => setTexto(e.target.value)}
-        placeholder="Nuevo producto"
-      />
-      <button onClick={manejarAñadir}>Añadir</button>
-    </div>
-  );
-}
 
 // 👈 Sin estado propio: recibe `productos` ya calculado y solo pinta.
 // Cuando el usuario pulsa "Borrar", no borra nada ella misma -- avisa
