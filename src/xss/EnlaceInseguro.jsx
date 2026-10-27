@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// 🔴 INSEGURO: usar directamente en `href` lo que escribió el usuario.
-// React no valida ni sanea URLs -- si el valor empieza por
-// "javascript:", el navegador lo interpreta como código y lo ejecuta
-// al hacer click en el enlace. No hace falta ningún <script> ni
-// dangerouslySetInnerHTML: basta con un href normal.
+// 🔴 INSEGURO: poner en `href` lo que escribió el usuario, sin validar.
+// Si el valor empieza por "javascript:", el navegador lo interpreta
+// como código y lo ejecuta al hacer click en el enlace. No hace falta
+// ningún <script> ni dangerouslySetInnerHTML: basta con un href.
+//
+// Ojo: desde React 19, `<a href={url}>` bloquea las URLs "javascript:"
+// (salta "React has blocked a javascript: URL as a security
+// precaution"). Pero esa protección solo existe si el atributo lo pone
+// React. En cuanto alguien toca el DOM directamente (una ref +
+// setAttribute, como aquí, o window.location = url, window.open(url),
+// una librería que no es de React...), la protección desaparece.
+// Y en React 18 o anteriores ni siquiera hace falta esto: basta con
+// href={url}.
 //
 // Pruébalo: escribe esto en el cuadro y pulsa "Guardar enlace":
 //   javascript:alert(document.cookie)
@@ -13,11 +21,17 @@ import { useState } from "react";
 export default function EnlaceInseguro() {
   const [url, setUrl] = useState("");
   const [guardada, setGuardada] = useState(null);
+  const enlace = useRef(null);
 
   function guardar() {
     if (!url.trim()) return;
     setGuardada(url);
   }
+
+  // 👈 Escribimos el href "a mano" en el DOM: React no lo ve y no lo filtra
+  useEffect(() => {
+    if (enlace.current) enlace.current.setAttribute("href", guardada);
+  }, [guardada]);
 
   return (
     <div>
@@ -31,8 +45,8 @@ export default function EnlaceInseguro() {
       <button onClick={guardar}>Guardar enlace</button>
       {guardada && (
         <p>
-          {/* 👈 href={guardada}: lo que sea que haya escrito el usuario, tal cual */}
-          <a href={guardada}>Su web</a>
+          {/* 👈 el href lo pone el useEffect: lo que sea que haya escrito el usuario, tal cual */}
+          <a ref={enlace}>Su web</a>
         </p>
       )}
     </div>
